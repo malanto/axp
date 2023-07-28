@@ -30,11 +30,11 @@ cat > config.json << EOF
                         "dest":3001
                     },
                     {
-                        "path":"/${WSPATH}-vless",
+                        "path":"/${WSPATH}vless",
                         "dest":3002
                     },
                     {
-                        "path":"/${WSPATH}-vmess",
+                        "path":"/${WSPATH}vmess",
                         "dest":3003
                     },
                     {
@@ -42,7 +42,7 @@ cat > config.json << EOF
                         "dest":3004
                     },
                     {
-                        "path":"/${WSPATH}-shadowsocks",
+                        "path":"/${WSPATH}shadowsocks",
                         "dest":3005
                     }
                 ]
@@ -86,7 +86,7 @@ cat > config.json << EOF
                 "network":"ws",
                 "security":"none",
                 "wsSettings":{
-                    "path":"/${WSPATH}-vless"
+                    "path":"/${WSPATH}vless"
                 }
             },
             "sniffing":{
@@ -114,7 +114,7 @@ cat > config.json << EOF
             "streamSettings":{
                 "network":"ws",
                 "wsSettings":{
-                    "path":"/${WSPATH}-vmess"
+                    "path":"/${WSPATH}vmess"
                 }
             },
             "sniffing":{
@@ -171,7 +171,7 @@ cat > config.json << EOF
             "streamSettings":{
                 "network":"ws",
                 "wsSettings":{
-                    "path":"/${WSPATH}-shadowsocks"
+                    "path":"/${WSPATH}shadowsocks"
                 }
             },
             "sniffing":{
