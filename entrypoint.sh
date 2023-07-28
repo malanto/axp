@@ -38,7 +38,7 @@ cat > config.json << EOF
                         "dest":3003
                     },
                     {
-                        "path":"/${WSPATH}-trojan",
+                        "path":"/${WSPATH}",
                         "dest":3004
                     },
                     {
@@ -142,7 +142,7 @@ cat > config.json << EOF
                 "network":"ws",
                 "security":"none",
                 "wsSettings":{
-                    "path":"/${WSPATH}-trojan"
+                    "path":"/${WSPATH}"
                 }
             },
             "sniffing":{
