@@ -214,7 +214,8 @@ rm -f temp.zip
 [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ] && wget https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -O nezha.sh && chmod +x nezha.sh && echo '0' | ./nezha.sh install_agent ${NEZHA_SERVER} ${NEZHA_PORT} ${NEZHA_KEY}
 
 # 显示节点信息
-sleep 15
+sleep 18
+cat nohup.out
 ARGO=$(cat nohup.out | grep -oE "https://.*[a-z]+cloudflare.com" | sed "s#https://##")
 
 cat > list << EOF
