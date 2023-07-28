@@ -215,7 +215,7 @@ rm -f temp.zip
 
 # 显示节点信息
 sleep 15
-ARGO=$(cat argo.log | grep -oE "https://.*[a-z]+cloudflare.com" | sed "s#https://##")
+ARGO=$(cat nohup.out | grep -oE "https://.*[a-z]+cloudflare.com" | sed "s#https://##")
 
 cat > list << EOF
 *******************************************
