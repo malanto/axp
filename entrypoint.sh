@@ -201,7 +201,7 @@ EOF
 # 下载并运行 Argo
 wget https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64
 chmod +x cloudflared-linux-amd64
-nohup ./cloudflared-linux-amd64 tunnel --url http://localhost:${PORT} --no-autoupdate &
+./cloudflared-linux-amd64 tunnel --url http://localhost:${PORT} --no-autoupdate > argo.log 2>&1 &
 
 # 下载 Xray，并伪装 xray 执行文件
 RANDOM_NAME=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
@@ -214,9 +214,9 @@ rm -f temp.zip
 [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ] && wget https://raw.githubusercontent.com/naiba/nezha/master/script/install.sh -O nezha.sh && chmod +x nezha.sh && echo '0' | ./nezha.sh install_agent ${NEZHA_SERVER} ${NEZHA_PORT} ${NEZHA_KEY}
 
 # 显示节点信息
-sleep 18
-cat nohup.out
-ARGO=$(cat nohup.out | grep -oE "https://.*[a-z]+cloudflare.com" | sed "s#https://##")
+sleep 15
+cat argo.log
+ARGO=$(cat argo.log | grep -oE "https://.*[a-z]+cloudflare.com" | sed "s#https://##")
 
 cat > list << EOF
 *******************************************
